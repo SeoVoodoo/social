@@ -1,0 +1,11 @@
+.item {
+  color: greenyellow;
+}
+
+.item.active {
+  color: gold;
+}
+
+.item img {
+  border-radius: 30px;
+} 

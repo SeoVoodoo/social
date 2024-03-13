@@ -1,0 +1,16 @@
+.nav {
+    grid-area: nav;
+    background-color: aquamarine;
+  }
+
+  .nav ul {
+    list-style-type: none;
+  }
+
+  .item {
+    color: white;
+  }
+
+  .item a {
+    text-decoration: none;
+  }
