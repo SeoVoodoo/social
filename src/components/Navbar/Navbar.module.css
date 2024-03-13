@@ -1,16 +1,21 @@
 .nav {
     grid-area: nav;
     background-color: aquamarine;
+    padding: 20px;
   }
 
   .nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .item {
+  .link {
     color: white;
+    text-decoration: none;
   }
 
-  .item a {
+  .activeLink {
+    color: gold;
     text-decoration: none;
   }
