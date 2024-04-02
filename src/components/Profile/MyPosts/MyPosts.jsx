@@ -4,17 +4,34 @@ import { Post } from './Post/Post';
 
 export const MyPosts = (props) => {
     
-    return (
-        <div>            
-            
-            My posts
-            <div>
-                <textarea> </textarea>
-                <button>Add Post</button>
-            </div>        
+    const newPostElement = React.createRef();
+    
+    const addPost = () => {
+        debugger;
+        const text = newPostElement.current.value;
+        props.addPost(text);
+        newPostElement.current.value = "";
+    }
 
-            <Post message = "Hi, how are you ?" likeCount={15} />
-            <Post message = "It's my first post" likeCount={20} />            
+    const postsElements = props.posts
+        .map( (post) => <Post message={post.message} likeCount={post.likeCount} />);
+  
+    
+    return (
+        <div className={s.postsBlock}>            
+            
+            <h3>My posts</h3>
+            <div>
+                <div>
+                    <textarea ref={newPostElement}> </textarea>
+                </div>                
+                <div>
+                    <button onClick={addPost}>Add Post</button>
+                </div>                
+            </div>        
+            <div className={s.posts}>
+                { postsElements }              
+            </div>                       
         </div>
     );
 };
